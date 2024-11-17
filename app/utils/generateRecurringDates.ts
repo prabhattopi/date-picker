@@ -16,7 +16,7 @@ export const generateRecurringDates = (
 ): Date[] => {
   let dates: Date[] = [];
   const interval = customOptions.interval || 1;
-  let currentDate = new Date(startDate);
+const currentDate = new Date(startDate);
   const lastDate = endDate
     ? new Date(endDate)
     : new Date(
@@ -48,7 +48,7 @@ export const generateRecurringDates = (
         const initialDate = new Date(firstWeekDates[0]);
         // Loop through each day of the week selected
         for (const dayOfWeek of daysOfWeek) {
-          let date = new Date(initialDate);
+          const date = new Date(initialDate);
           // Set date to the next occurrence of the selected day
           date.setDate(
             date.getDate() + ((7 + dayOfWeek - date.getDay()) % 7)
